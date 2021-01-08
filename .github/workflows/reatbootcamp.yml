@@ -29,7 +29,7 @@ jobs:
       - name: installing Node
         uses: actions/setup-node@v2-beta
         with:
-             node-version: 14
+             node-version: 13
 
   - name: GitHub Action for Yarn
   # You may pin to the exact commit or the version.
