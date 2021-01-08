@@ -27,17 +27,22 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2-beta
         with: 
-        version: 11
-       - name: Yarn With Always-Auth
+        version: 12
+    - name: Setup Node.js environment
+  uses: actions/setup-node@v2-beta
+  with:
+    version: 12
+  - name: GitHub Action for Yarn
   # You may pin to the exact commit or the version.
-  # uses: Fedorm/actions-yarn@e0c7c1e3153524d1c31fe68003660c21938385e4
-  uses:Fedorm/actions-yarn@e0c7c1e3153524d1c31fe68003660c21938385e4
+  # uses: Borales/actions-yarn@4965e1a0f0ae9c422a9a5748ebd1fb5e097d22b9
+  uses: Borales/actions-yarn@v2.1.0
   with:
     # Yarn command
     cmd: install
-    name: creating build
-    run: yarn build
-    -name: installing surge
+    
+
+    -name: installimg surge
      run: npm install -g surge
+     
      -name: deploying on surge
-      run: surge ./build ultra-bootcamp.surge.sh --token ${{secrets.SURGES_TOKENSS}}
+      run:surge ./build ultra-bootcamp.surge.sh --token ${{secrets.SURGE_ONE}}
